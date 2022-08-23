@@ -1,3 +1,4 @@
+import random
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -5,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", number=random.randint(0, 1000))
 
 
 if __name__ == "__main__":
